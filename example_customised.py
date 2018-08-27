@@ -70,9 +70,9 @@ def update(dt):
     # Draw the grid
     grid.draw()
     # Uncomment the following three lines to save images
-    global counter
-    counter += 1
-    pyglet.image.get_buffer_manager().get_color_buffer().save('data/'+str(counter).zfill(10)+'.png')
+    #global counter
+    #counter += 1
+    #pyglet.image.get_buffer_manager().get_color_buffer().save('data/'+str(counter).zfill(10)+'.png')
     
 
 # ----- EXAMPLE TWO -----

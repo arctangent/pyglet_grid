@@ -67,8 +67,8 @@ class Grid():
         cell_width = self.cell_width
         cell_height = self.cell_height
         cell_border = self.cell_border
-        for x in xrange(0, self.w):
-            for y in xrange(0, self.h):
+        for x in range(self.w):
+            for y in range(self.h):
                 # Calculate box area
                 x1,y1 = x*cell_width, y*cell_height
                 x2,y2 = x1+cell_width, y1
@@ -114,7 +114,7 @@ class Grid():
         r,g,b,alpha = self.background
         # There are 4 vertices per coordinate, each with 3 values for the colour
         c_max = 12 * (self.h * self.w)
-        self.vertex_list.colors[0:c_max] = [r,g,b] * (c_max / 3)
+        self.vertex_list.colors[0:c_max] = [r,g,b] * int(c_max / 3)
 
     def draw(self):
         "Draw the vertex list using the currently assigned colours."
