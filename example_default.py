@@ -50,14 +50,14 @@ def update(dt):
     # Clear the grid
     grid.clear_all_cells()
     # Set the colours of some random cells in the grid
-    for x in range(0, how_many):
+    for x in range(how_many):
         x = int(w * random())
         y = int(h * random())
         r = int(255 * random())
         g = int(255 * random())
         b = int(255 * random())
-        c = (r,g,b)
-        grid.set_cell(x,y,c)
+        c = (r, g, b)
+        grid.set_cell(x, y, c)
     
     # Draw the grid
     grid.draw()
@@ -83,19 +83,19 @@ def update_faster(dt):
         # Allow the dots to stick around for a while
         if random() < 0.1:
             # Unset the colour of the cell (to the grid's background_colour)
-            grid.unset_cell(x,y)
-            dirty_cells.remove([x,y])
+            grid.unset_cell(x, y)
+            dirty_cells.remove([x, y])
     # Set the colours of some random cells in the grid
-    for x in range(0, how_many):
+    for x in range(how_many):
         x = int(w * random())
         y = int(h * random())
         r = int(255 * random())
         g = int(255 * random())
         b = int(255 * random())
-        c = (r,g,b)
-        grid.set_cell(x,y,c)
+        c = (r, g, b)
+        grid.set_cell(x, y, c)
         # Add this cell to the list of dirty cells
-        dirty_cells.append([x,y])
+        dirty_cells.append([x, y])
     # Draw the grid
     grid.draw()
     # Uncomment the following three lines to save images

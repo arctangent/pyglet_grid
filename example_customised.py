@@ -33,7 +33,7 @@ grid = pyglet_grid.Grid()
 # 1. Set up the window
 grid.window_width = 400
 grid.window_height = 800
-grid.background = (255,255,255,255)
+grid.background = (255, 255, 255, 255)
 grid.init_window()
 # 2. Set up the cell size and border
 grid.cell_height = 20
@@ -59,14 +59,14 @@ def update(dt):
     # Clear the grid
     grid.clear_all_cells()
     # Set the colours of some random cells in the grid
-    for x in range(0, how_many):
+    for x in range(how_many):
         x = int(w * random())
         y = int(h * random())
         r = int(255 * random())
         g = int(255 * random())
         b = int(255 * random())
-        c = (r,g,b)
-        grid.set_cell(x,y,c)
+        c = (r, g, b)
+        grid.set_cell(x, y, c)
     # Draw the grid
     grid.draw()
     # Uncomment the following three lines to save images
@@ -87,23 +87,23 @@ def update_faster(dt):
     # Unset the colours of the dirty cells
     global dirty_cells
     dc = dirty_cells[:] # Iterate over a copy of the list, but modify the real list
-    for x,y in dc:
+    for x, y in dc:
         # Allow the dots to stick around for a while
         if random() < 0.1:
             # Unset the colour of the cell (to the grid's background_colour)
-            grid.unset_cell(x,y)
-            dirty_cells.remove([x,y])
+            grid.unset_cell(x, y)
+            dirty_cells.remove([x, y])
     # Set the colours of some random cells in the grid
-    for x in range(0, how_many):
+    for x in range(how_many):
         x = int(w * random())
         y = int(h * random())
         r = int(255 * random())
         g = int(255 * random())
         b = int(255 * random())
-        c = (r,g,b)
-        grid.set_cell(x,y,c)
+        c = (r, g, b)
+        grid.set_cell(x, y, c)
         # Add this cell to the list of dirty cells
-        dirty_cells.append([x,y])
+        dirty_cells.append([x, y])
     # Draw the grid
     grid.window.clear()
     grid.draw()
